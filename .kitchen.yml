@@ -1,0 +1,29 @@
+---
+driver:
+  name: ec2
+  region: 'us-east-1'
+  availability_zone: 'us-east-1b'
+  aws_ssh_key_id: <ssh_key>.pem
+  instance_type: t2.micro
+  subnet_id: subnet-<subnet_id>
+  security_group_ids: ["<Any_SG_REQUIRED", "SG2"]
+
+provisioner:
+  name: chef_zero
+
+transport:
+  username: root
+  ssh_key: <%=ENV['HOME']%>/.ssh/ssh-key.pem
+
+platforms:
+  - name: centos-6.4
+    driver:
+      image_id: ami-<ami_ID>
+
+suites:
+  - name: default
+    run_list:
+      - recipe[<%=File.basename(File.expand_path('..', __FILE__))%>]
+    attributes:
+      chef_workstation:
+        testing: true

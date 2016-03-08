@@ -1,0 +1,58 @@
+AllCops:
+  Exclude:
+    - 'Guardfile'
+    - '**/metadata.rb'
+    - '**/Berksfile'
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Encoding:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+ClassVars:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+# Assignment branch conditional size (number of conditional statments)
+Metrics/AbcSize:
+  Enabled: false
+
+# Allow uses of for, and while loops
+Loop:
+  Enabled: false
+
+# Allows regular expressions: /^test/ instead of only %r{test}
+Style/RegexpLiteral:
+  Enabled: false
+
+# Allows uses of 'each' intead of break statements
+Style/Next:
+  Enabled: false
+
+# Allows definitions that are not the 'correct' predicate relationship
+Style/PredicateName:
+  Enabled: false
